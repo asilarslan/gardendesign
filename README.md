@@ -189,8 +189,8 @@ The landing page is designed to be analytics-ready but doesn't include tracking 
 
 - **App ID**: 6747927653
 - **App Store URL**: https://apps.apple.com/us/app/garden-design-ai-planner/id6747927653
-- **Developer**: Meltem Arslan
-- **Support Email**: support@gardendesignapp.com
+- **Developer**: Asil Arslan
+- **Support Email**: asilarslan93@gmail.com
 - **Category**: Graphics & Design
 - **Age Rating**: 4+
 - **Pricing**: Free with In-App Purchases
@@ -221,9 +221,8 @@ The landing page is designed to be analytics-ready but doesn't include tracking 
 
 ## 📞 Contact & Support
 
-- **Developer**: Meltem Arslan
-- **Email**: support@gardendesignapp.com
-- **Privacy**: privacy@gardendesignapp.com
+- **Developer**: Asil Arslan
+- **Email**: asilarslan93@gmail.com
 - **Website**: https://gardendesign.app
 - **App Store**: [Garden Design: AI Planner](https://apps.apple.com/us/app/garden-design-ai-planner/id6747927653)
 
