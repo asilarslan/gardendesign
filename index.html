@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Design: AI Planner - Landscape Design with AI Tips | Transform Your Garden</title>
+    <meta name="description" content="Redesign your outdoor space with AI-powered landscape planning. Garden Design: AI Planner helps you visualize stunning garden transformations with English, Japanese, Mediterranean, and more garden styles.">
+    <meta name="keywords" content="garden design, landscape planning, AI garden makeover, outdoor design, garden transformation, landscape design app, garden planner, AI landscape, garden styles, backyard design">
+    <meta name="author" content="Meltem Arslan">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gardendesign.app">
+    <meta property="og:title" content="Garden Design: AI Planner - Transform Your Garden with AI">
+    <meta property="og:description" content="Redesign your outdoor space with AI-powered landscape planning. Visualize stunning garden transformations with various styles and AI tips.">
+    <meta property="og:image" content="https://gardendesign.app/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gardendesign.app">
+    <meta property="twitter:title" content="Garden Design: AI Planner - Transform Your Garden with AI">
+    <meta property="twitter:description" content="Redesign your outdoor space with AI-powered landscape planning. Visualize stunning garden transformations with various styles and AI tips.">
+    <meta property="twitter:image" content="https://gardendesign.app/og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://gardendesign.app">
+
+    <!-- App Store Link -->
+    <meta name="apple-itunes-app" content="app-id=6747927653">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "Garden Design: AI Planner",
+        "description": "Redesign your outdoor space with AI-powered landscape planning. Garden Design: AI Makeover helps you visualize stunning garden transformations tailored to your preferences and surroundings.",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "iOS",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "downloadUrl": "https://apps.apple.com/us/app/garden-design-ai-planner/id6747927653",
+        "author": {
+            "@type": "Person",
+            "name": "Meltem Arslan"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "ratingCount": "1"
+        }
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="garden-design-logo.png">
+    <link rel="apple-touch-icon" href="garden-design-logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="garden-design-logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="garden-design-logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #8db600 0%, #a0d000 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #8db600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            padding: 2px;
+            box-shadow: 0 2px 6px rgba(141, 182, 0, 0.2);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #8db600;
+        }
+
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .app-store-badge {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .app-store-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .features {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .how-it-works {
+            background: linear-gradient(135deg, #7cb342 0%, #8db600 100%);
+            padding: 80px 0;
+            color: white;
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .step-number {
+            background: rgba(255, 255, 255, 0.2);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .testimonials {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #8db600;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #8db600 0%, #a0d000 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+            background: transparent;
+            border: none;
+            z-index: 999;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+            display: block;
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                width: 200px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                padding: 1rem;
+                gap: 1rem;
+                z-index: 1001;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 0.5rem 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+
+            .features-grid, .steps, .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-logo {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        .seo-content {
+            background: white;
+            padding: 60px 0;
+        }
+
+        .seo-content h2 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .seo-content p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .keywords {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .keywords h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .keywords ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+            list-style: none;
+        }
+
+        .keywords li {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            color: #8db600;
+            border: 1px solid #8db600;
+        }
+
+        .hero-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="garden-design-logo.png" alt="Garden Design Logo" class="header-logo">
+                Garden Design
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#download">Download</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <img src="garden-design-logo.png" alt="Garden Design Logo" class="hero-logo">
+                <h1>Transform Your Garden with AI</h1>
+                <p>Redesign your outdoor space with AI-powered landscape planning. Upload a photo and instantly visualize stunning garden transformations with English, Japanese, Mediterranean, and many more garden styles.</p>
+                <a href="https://apps.apple.com/us/app/garden-design-ai-planner/id6747927653" class="cta-button">
+                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1704153600" alt="Download on the App Store" class="app-store-badge">
+                </a>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Powerful AI Garden Design Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3>AI-Powered Transformations</h3>
+                        <p>Advanced AI algorithms instantly transform your garden photos into stunning landscape designs with realistic results.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌸</div>
+                        <h3>Multiple Garden Styles</h3>
+                        <p>Choose from English, Japanese, Mediterranean, Desert, Cottage, Gravel gardens and many more seasonal styles.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📸</div>
+                        <h3>Photo Upload & Compare</h3>
+                        <p>Simply upload a photo of your existing garden and instantly see before-after comparisons with AI transformations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏡</div>
+                        <h3>Preserve Background</h3>
+                        <p>Maintain all background structures for accurate before-after comparisons while transforming your garden design.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💾</div>
+                        <h3>Save & Share</h3>
+                        <p>Save your favorite garden makeovers, compare different styles, and share your landscape design ideas with others.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Professional Results</h3>
+                        <p>Get professional-quality garden designs perfect for homeowners, gardeners, and landscaping professionals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <div class="container">
+                <h2>How Garden Design Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Upload Photo</h3>
+                        <p>Take or upload a photo of your existing garden or outdoor space that you want to transform</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Choose Style</h3>
+                        <p>Select from various garden styles: English, Japanese, Mediterranean, Desert, Cottage, and more</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>AI Transformation</h3>
+                        <p>Watch as AI instantly generates realistic garden transformations tailored to your chosen style</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2>What Garden Enthusiasts Say</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial">
+                        <p>"Incredible app! I could finally visualize how my backyard would look with a Japanese garden design. The AI results were so realistic!"</p>
+                        <div class="testimonial-author">- Sarah M., Homeowner</div>
+                    </div>
+                    <div class="testimonial">
+                        <p>"As a landscape designer, this app helps me show clients different garden styles quickly. It's become an essential tool in my workflow!"</p>
+                        <div class="testimonial-author">- David L., Landscape Designer</div>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Perfect for planning my garden makeover! I tried Mediterranean and English styles before deciding on the final design."</p>
+                        <div class="testimonial-author">- Maria K., Garden Enthusiast</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="seo-content">
+            <div class="container">
+                <h2>The Ultimate AI Garden Design & Landscape Planning Tool</h2>
+                <p>Garden Design: AI Planner revolutionizes how homeowners, gardeners, and landscaping professionals approach outdoor space design. Our cutting-edge artificial intelligence technology transforms ordinary garden photos into stunning landscape visualizations, making it the most comprehensive garden design app available on iOS.</p>
+                
+                <p>Whether you're modernizing your backyard, adding a relaxing Japanese touch, or exploring lush English garden layouts, our AI-powered platform provides instant access to professional-quality garden transformations. The app recognizes and maintains all background structures while seamlessly integrating new landscape elements.</p>
+
+                <h2>Perfect for Garden Professionals and Enthusiasts</h2>
+                <p>Landscape architects, garden designers, nursery professionals, and home improvement enthusiasts worldwide trust Garden Design for accurate landscape visualization. The app supports various garden styles and seasonal themes, making it perfect for any outdoor space transformation project.</p>
+
+                <div class="keywords">
+                    <h3>Supported Garden Styles & Themes</h3>
+                    <ul>
+                        <li>English Garden</li>
+                        <li>Japanese Garden</li>
+                        <li>Mediterranean Garden</li>
+                        <li>Desert Garden</li>
+                        <li>Cottage Garden</li>
+                        <li>Gravel Garden</li>
+                        <li>Modern Landscape</li>
+                        <li>Tropical Garden</li>
+                        <li>Zen Garden</li>
+                        <li>Herb Garden</li>
+                        <li>Seasonal Themes</li>
+                        <li>Sustainable Design</li>
+                    </ul>
+                </div>
+
+                <h2>Advanced AI Technology for Realistic Results</h2>
+                <p>Our proprietary machine learning algorithms have been trained on thousands of professional garden designs, ensuring high-quality transformations that maintain accuracy and visual appeal. The app continuously learns and improves, expanding its design capabilities with regular updates.</p>
+
+                <p>Garden Design works seamlessly on iPhone, iPad, and Mac, making it perfect for use at home, in the field, or during client consultations. The app's intuitive interface ensures that both beginners and professionals can navigate easily and achieve stunning results quickly.</p>
+            </div>
+        </section>
+
+        <section id="download" class="cta-section">
+            <div class="container">
+                <h2>Start Designing Your Dream Garden Today</h2>
+                <p>Join thousands of garden enthusiasts who trust Garden Design for professional landscape planning</p>
+                <a href="https://apps.apple.com/us/app/garden-design-ai-planner/id6747927653" class="cta-button">
+                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1704153600" alt="Download on the App Store" class="app-store-badge">
+                </a>
+                <br><br>
+                <p style="font-size: 0.9rem; opacity: 0.8;">Compatible with iPhone, iPad, and Mac • iOS 17.6+ Required • Free with Premium Options</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="mailto:support@gardendesignapp.com">Support</a>
+                <a href="terms-of-use.html">Terms of Use</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="https://apps.apple.com/us/app/garden-design-ai-planner/id6747927653">App Store</a>
+            </div>
+            <p>&copy; 2025 Garden Design by Meltem Arslan. All rights reserved.</p>
+            <p>Transform your outdoor space with AI-powered landscape planning technology.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            console.log('Menu toggle clicked');
+            const navLinks = document.getElementById('navLinks');
+            if (navLinks) {
+                navLinks.classList.toggle('active');
+                console.log('Menu active state:', navLinks.classList.contains('active'));
+            }
+        }
+
+        // Close menu when clicking on a link
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    document.getElementById('navLinks').classList.remove('active');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                const nav = document.querySelector('.nav-links');
+                const hamburger = document.querySelector('.hamburger');
+                if (nav && hamburger && !nav.contains(e.target) && !hamburger.contains(e.target)) {
+                    nav.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
